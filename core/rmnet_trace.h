@@ -7,15 +7,14 @@
 #define TRACE_SYSTEM rmnet
 #undef TRACE_INCLUDE_PATH
 
+/*
+ * Path must be relative to location of 'define_trace.h' header in kernel
+ * Define path if not defined in bazel file
+ */
 #ifndef RMNET_TRACE_INCLUDE_PATH
-#if defined(CONFIG_RMNET_LA_PLATFORM)
-#define RMNET_TRACE_INCLUDE_PATH ../../../../vendor/qcom/opensource/datarmnet/core
-#elif defined(__arch_um__)
-#define RMNET_TRACE_INCLUDE_PATH ../../datarmnet/core
-#else
-#define RMNET_TRACE_INCLUDE_PATH ../../../../../../../datarmnet/core
-#endif /* defined(CONFIG_RMNET_LA_PLATFORM) */
+#define RMNET_TRACE_INCLUDE_PATH ../../techpack/datarmnet/core
 #endif /* RMNET_TRACE_INCLUDE_PATH */
+
 #define TRACE_INCLUDE_PATH RMNET_TRACE_INCLUDE_PATH
 #define TRACE_INCLUDE_FILE rmnet_trace
 
