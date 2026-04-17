@@ -2,6 +2,11 @@ ifneq (, $(filter y, $(CONFIG_ARCH_PINEAPPLE) $(CONFIG_ARCH_SUN) $(CONFIG_ARCH_P
 ccflags-y	+= -DRMNET_LA_PLATFORM -DCONFIG_RMNET_LA_PLATFORM
 endif
 
+ccflags-y += \
+	-I$(srctree)/techpack/datarmnet-ext/mem \
+	-I$(srctree)/techpack/dataipa/drivers/platform/msm/include \
+	-I$(srctree)/techpack/dataipa/drivers/platform/msm/include/uapi
+
 obj-y += rmnet_core.o
 
 #core sources
